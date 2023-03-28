@@ -1,10 +1,14 @@
 package com.arclightcreatives.di_basicapparchitecture.utils
 
+import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class NetManager(private var applicationContext: Context) {
+@Singleton
+class NetManager @Inject constructor( var applicationContext: Context) {
     private var status: Boolean? = false
 
     val isConnectedToInternet: Boolean?

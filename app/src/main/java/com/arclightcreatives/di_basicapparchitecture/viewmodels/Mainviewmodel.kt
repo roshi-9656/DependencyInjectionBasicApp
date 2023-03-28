@@ -13,9 +13,10 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
 
-class Mainviewmodel(private var repository: Repository) : ViewModel() {
+class Mainviewmodel (var repository: Repository) : ViewModel() {
 
     var isLoading = ObservableField<Boolean>()
     var dataViewmodel = MutableLiveData<ArrayList<Repomodel>>()

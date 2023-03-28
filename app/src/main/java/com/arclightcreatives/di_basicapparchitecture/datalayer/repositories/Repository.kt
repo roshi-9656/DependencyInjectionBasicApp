@@ -5,8 +5,9 @@ import com.arclightcreatives.di_basicapparchitecture.datalayer.data.Remotedataso
 import com.arclightcreatives.di_basicapparchitecture.datalayer.models.Repomodel
 import com.arclightcreatives.di_basicapparchitecture.utils.NetManager
 import io.reactivex.Observable
+import javax.inject.Inject
 
-class Repository(private val netManager: NetManager) {
+class Repository @Inject constructor(var netManager: NetManager) {
 
     val localdatasource = Localdatasource()
     val remotedatasource = Remotedatasource()
